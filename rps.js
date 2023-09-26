@@ -31,8 +31,7 @@ function playRound(){
         let z = document.createElement('p'); // is a node
         z.innerHTML = result;
         document.body.appendChild(z);
-        computerWins();
-       
+        computerWins();      
      } else if (playerMove ==  computerMove){
          let result = `Its a Draw. The Computer played ${computerMove}`;
         let z = document.createElement('p'); // is a node
@@ -46,24 +45,19 @@ function playRound(){
         let z = document.createElement('p'); // is a node
         z.innerHTML = result;
         document.body.appendChild(z);
-        playerWins();
-        
-        
+        playerWins();       
      } else {
         let result ="Re-enter your move again";
         let z = document.createElement('p'); // is a node
         z.innerHTML = result;
         document.body.appendChild(z);
-        
-
-
      }
-
- 
-
 }
+//This function prints out the winner after the round is over//
 function winner(computerScore,playerScore){
+    //call the computerWin function which returns the total computerScore. There is a problem where the total compscore is greater by one( so thats why I minus one. Its a temporary fix for the moment). //
     let computerScoreTotal= computerWins(computerScore) -1;
+    //call the playerWin function which returns the total playerScore//
     let playerScoreTotal= playerWins(playerScore) -1;
     if (computerScoreTotal > playerScoreTotal){
         let result = `The Computer Wins this Game. 
@@ -81,14 +75,10 @@ function winner(computerScore,playerScore){
         document.body.appendChild(z);
     } 
 }
-
-function game(){
-     
+function game(){    
     for (let i =0; i <5; i++){
         playRound()
-    }
-   
+    }   
     winner();
 }
-
 game();
