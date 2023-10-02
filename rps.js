@@ -29,13 +29,13 @@ function playRound(){
         let result = `The Computer crushed you this round. The Computer played ${computerMove}. ${computerMove} beats ${playerMove}`;
         //creates a 'p' element //
         let z = document.createElement('p'); // is a node
-        z.innerHTML = result;
+        z.innerText = result;
         document.body.appendChild(z);
         computerWins();      
      } else if (playerMove ==  computerMove){
          let result = `Its a Draw. The Computer played ${computerMove}`;
         let z = document.createElement('p'); // is a node
-            z.innerHTML = result;
+            z.innerText = result;
             document.body.appendChild(z);
      } else if ((playerMove == "paper" && computerMove == "rock")
      ||(playerMove == "rock" && computerMove == "scissors" )
@@ -43,13 +43,13 @@ function playRound(){
         //if the player wins the playerwin function is called//
         let result = `You won this round. The Computer played ${computerMove}. ${playerMove}  beats ${computerMove} `;
         let z = document.createElement('p'); // is a node
-        z.innerHTML = result;
+        z.innerText = result;
         document.body.appendChild(z);
         playerWins();       
      } else {
         let result ="Re-enter your move again";
         let z = document.createElement('p'); // is a node
-        z.innerHTML = result;
+        z.innerText = result;
         document.body.appendChild(z);
      }
 }
@@ -64,14 +64,14 @@ function winner(computerScore,playerScore){
         computer - ${computerScoreTotal} vs You -${playerScoreTotal}
         Press F5 to play again`;
         let z = document.createElement('p'); // is a node
-        z.innerHTML = result;
+        z.innerText = result;
         document.body.appendChild(z);
     }else  if( playerScoreTotal>computerScoreTotal){
         let result = `You win this Game. 
         computer - ${computerScoreTotal} vs You -${playerScoreTotal}
         Press F5 to play again`;
         let z = document.createElement('p'); // is a node
-        z.innerHTML = result;
+        z.innerText = result;
         document.body.appendChild(z);
     } 
 }
