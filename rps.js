@@ -25,9 +25,10 @@ function playRound(){
     
     btn.forEach(button => button.addEventListener("click", () =>{
         let playerMove = button.textContent;
+        playerMove = playerMove.toLowerCase();
         
     }))
-    playerMove = playerMove.toLowerCase();
+    
     const computerMove = getComputerChoice();
     //if the computer wins the computerwin function is called//
      if ((playerMove == "rock" && computerMove == "paper" )
