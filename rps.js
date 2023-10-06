@@ -1,11 +1,12 @@
 let playerScore = 0;
 let computerScore = 0;
+const btn =document.querySelectorAll("#btn");
 //this function returns a random move from the move array//
 function getComputerChoice(){
     const move =["rock", "paper", "scissors"];
     return move[Math.floor(Math.random()*move.length)];
 }
-const Btn =document.querySelectorAll("#btn");
+
 //this function add 1 to the playerScore every time a player wins//
 function playerWins(){
     playerScore++;
@@ -19,9 +20,13 @@ function computerWins(){
 }
 
 // this is the main function //
-/*function playRound(){
+function playRound(){
     //prompt the player for the move//
-    let playerMove = prompt("What's your move (rock, paper or scissors)?");
+    
+    btn.forEach(button => button.addEventListener("click", () =>{
+        let playerMove = button.textContent;
+        
+    }))
     playerMove = playerMove.toLowerCase();
     const computerMove = getComputerChoice();
     //if the computer wins the computerwin function is called//
@@ -54,7 +59,7 @@ function computerWins(){
         z.innerText = result;
         document.body.appendChild(z);
      }
-}*/
+}
 //This function prints out the winner after the round is over//
 function winner(computerScore,playerScore){
     //call the computerWin function which returns the total computerScore. There is a problem where the total compscore is greater by one( so thats why I minus one. Its a temporary fix for the moment). //

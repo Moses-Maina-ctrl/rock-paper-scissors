@@ -4,9 +4,11 @@
 #buttons{
     display: flex;
     justify-content: center;
-    padding: 100px;
+    padding: 50px;
     gap: 100px;
-    
+    border-style: solid;
+    margin:50px 750px;
+    border-radius: 25px;
 }
 .rps{
     display: flex;
@@ -16,4 +18,23 @@
 }
 .header{
     text-align: center;
+}
+.user{
+    max-width: 100px;
+}
+#result{
+    display: flex;
+    justify-content: space-around;
+}
+#btn{
+    border-radius: 0.5em;
+    padding: 0.5em 2em;
+    margin: 0.25em;
+    font-size: 15px;
+    outline: none;
+    background: #e6e4e4;
+    cursor: pointer;
+}
+#btn:hover{
+    background: #817f7f;
 }
