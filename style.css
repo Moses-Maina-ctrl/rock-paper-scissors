@@ -49,3 +49,13 @@
     
 }
 
+#output{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700px;
+}
+#finalOutput{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700px;
+}
