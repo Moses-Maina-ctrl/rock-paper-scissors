@@ -5,18 +5,15 @@ const playerScore_span = document.querySelector(".playerScore");
 const computerScore_span = document.querySelector(".CompScore");
 const output_div = document.querySelector("#output > p");
 const finalOutput_div = document.querySelector("#finalOutput > p");
-
 //this function returns a random move from the move array//
 function getComputerChoice(){
     const move =["rock", "paper", "scissors"];
     return move[Math.floor(Math.random()*move.length)];
 }
-
 //this function add 1 to the playerScore every time a player wins//
 function playerWins(){
     playerScore++;
-    playerScore_span.innerText =playerScore;
-    
+    playerScore_span.innerText =playerScore;  
 }
 //this function add 1 to the computerScore every time a player wins//
 function computerWins(){
@@ -33,8 +30,12 @@ btn.forEach(button => button.addEventListener("click", () =>{
      || (playerMove == "paper" && computerMove == "scissors" )){
         let result = `The Computer crushed you this round. The Computer played ${computerMove}. ${computerMove} beats ${playerMove}`;
         output_div.innerText =result;
-        computerWins();  
-          
+        computerWins();
+        if (computerScore ==5){
+            let resultz = `I Win this Game!!!! Loser!! Press F5 to play again`;
+            finalOutput_div.innerText =resultz;  
+            disableBtn()    
+        }  
      } else if (playerMove ==  computerMove){
         let result = `Its a Draw.The Computer played ${computerMove}`
         output_div.innerText =result;
@@ -43,40 +44,19 @@ btn.forEach(button => button.addEventListener("click", () =>{
      || (playerMove == "scissors" && computerMove == "paper")){
         let result = `You win.The Computer played ${computerMove}`
         output_div.innerText =result;
-        
         playerWins(); 
-           
-     } else {
-        
-        console.log("wrong")
-        
+        if( playerScore == 5){
+            let resultz = `You win this Game!! Lucky!! Press F5 to play again`;
+            finalOutput_div.innerText =resultz;
+            disableBtn()     
      }
-     
+     } else {   
+        let result = `Its a Draw.The Computer played ${computerMove}`
+        output_div.innerText =result; 
+     } 
 }))
-
-
-function winner(){
-    //call the computerWin function which returns the total computerScore. There is a problem where the total compscore is greater by one( so thats why I minus one. Its a temporary fix for the moment). //
-    let computerScoreTotal= computerWins(computerScore) -1;
-    //call the playerWin function which returns the total playerScore//
-    let playerScoreTotal= playerWins(playerScore) -1;
-    if (computerScoreTotal ==5){
-        let result = `The Computer Wins this Game.`;
-        finalOutput_div.innerText =result;
-        playerScore = 0;
-        computerScore = 0;
-        playerScore_span.innerText =playerScore;
-        computerScore_span.innerText =computerScore;
-        
-    }else  if( playerScoreTotal == 5){
-        let result = `You win this Game.`;
-        output_div.innerText =result;
-        playerScore = 0;
-        computerScore = 0;
-        playerScore_span.innerText =playerScore;
-        computerScore_span.innerText =computerScore;
-        
-    } else {
-
-    }
+function disableBtn(){
+    btn.forEach(button => {
+        button.disabled = true
+    })
 }

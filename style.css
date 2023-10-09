@@ -7,14 +7,19 @@
     padding: 50px;
     gap: 100px;
     border-style: solid;
-    
     border-radius: 25px;
+    overflow: hidden;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+    flex-wrap: wrap;
 }
 .rps{
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 50px;
+    
 }
 .header{
     text-align: center;
@@ -25,6 +30,7 @@
 #result{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     
 }
 #btn{
@@ -45,6 +51,7 @@
     justify-content: space-around;
     font-size: 100px;
     font-weight: 700px;
+    flex-wrap: wrap;
     
     
 }
@@ -58,4 +65,5 @@
     text-align: center;
     font-size: 25px;
     font-weight: 700px;
+    color: rgb(204, 53, 78);
 }
