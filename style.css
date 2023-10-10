@@ -13,6 +13,7 @@
     margin-right: 15%;
     
     flex-wrap: wrap;
+    flex-shrink: 1;
 }
 .rps{
     display: flex;
@@ -31,6 +32,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-shrink: 1;
     
 }
 #btn{
@@ -63,7 +65,7 @@
 }
 #finalOutput{
     text-align: center;
-    font-size: 25px;
-    font-weight: 700px;
+    font-size: 40px;
+    font-weight: 800px;
     color: rgb(204, 53, 78);
 }
