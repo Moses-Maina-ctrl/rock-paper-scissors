@@ -69,3 +69,10 @@
     font-weight: 800px;
     color: rgb(204, 53, 78);
 }
+.cap{
+    display: block;
+    text-align: center;
+    font-weight: 700px;
+    font-size: 24px;
+
+}
